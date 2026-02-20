@@ -10,8 +10,8 @@ services:
     networks:
       backend:
         ipv4_address: 172.20.0.5
-    ports:
-      - "127.0.0.1:5000:5000"
+    #ports:
+    #  - 5000:5000
     environment:
       DB_HOST: db
       DB_PORT: 3306
@@ -26,8 +26,8 @@ services:
     networks:
       backend:
         ipv4_address: 172.20.0.10
-    ports:
-      - "127.0.0.1:3306:3306"
+    #ports:
+    #  - 3306:3306
     env_file:
       - .env
     environment:
@@ -35,14 +35,7 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_ROOT_HOST: "%"
-    #healthcheck:
-      #test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      #interval: 5s
-      #retries: 10
-    #depends_on:    
-      #- reverse-proxy
-      #- ingress-proxy    
+      MYSQL_ROOT_HOST: "%"     
 networks:
   backend:
     driver: bridge
