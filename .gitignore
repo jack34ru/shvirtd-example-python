@@ -40,7 +40,7 @@ build/
 # ----------------------
 # Docker / контейнеры
 # ----------------------
-Dockerfile*
+Dockerfile
 docker-compose*
 *.tar
 *.img
